@@ -1,6 +1,7 @@
 import {useState, useEffect} from "react";
 import Axios from "axios";
 import NewsItem from "./NewsItem";
+import "./Styles/Main.css";
 
 export default function Main(){
     const [articles, setArticles] = useState([]);
@@ -32,7 +33,9 @@ export default function Main(){
                 articles.map((item) => 
                 (
                     item.source.name === selectedSource ?
-                    <NewsItem item = {item}/>
+                    <div className="newsItemWrapper">
+                        <NewsItem item = {item}/>
+                    </div>
                     :
                     null
                 ))

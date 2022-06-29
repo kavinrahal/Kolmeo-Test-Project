@@ -1,0 +1,23 @@
+.filterBox {
+    border-radius: 5px;
+    height: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.newsReader{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #A5DEF1;
+    
+}
+
+.newsItemWrapper{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background: #A5DEF1;
+}
