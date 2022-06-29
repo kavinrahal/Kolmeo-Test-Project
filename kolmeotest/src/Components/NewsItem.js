@@ -6,7 +6,7 @@ export default function NewsItem({ item }) {
     AOS.init();
 
     return(
-        <div className="newsItem">
+        <div className="newsItem hvr-grow">
             <div className="articleHeadWrapper">
                 <a href = {item.url} target="_blank" rel="noopener noreferrer"><h1 className="articleTitle">{item.title}</h1></a>
             </div>
