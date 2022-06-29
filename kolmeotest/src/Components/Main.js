@@ -1,6 +1,6 @@
 import {useState, useEffect} from "react";
 import Axios from "axios";
-import {Link} from "react-router-dom";
+import NewsItem from "./NewsItem";
 
 export default function Main(){
     const [articles, setArticles] = useState([]);
@@ -16,33 +16,23 @@ export default function Main(){
     }, [])
 
     return(
-        <div>
+        <div className="newsReader">
             <select className="filterBox" value = {selectedSource} onChange = {(e) => setSelectedSource(e.target.value)}>
                 <option value="">All Sources</option>
                 {listOfSources.map((item) => (
                     <option key = {item} value = {item}>{item}</option>
                 ))}
             </select>
-            {selectedSource == ""?
+            {selectedSource === ""?
                 articles.map((item) => 
                 (
-                    <div>
-                        <a href = {item.url} target="_blank" rel="noopener noreferrer"><h1>{item.title}</h1></a>
-                        <h3>{item.author}</h3>
-                        <p>{item.content}</p>
-                        <p>{item.source.name}</p>
-                    </div>
+                    <NewsItem item = {item}/>
                 ))
                 :
                 articles.map((item) => 
                 (
-                    item.source.name == selectedSource ?
-                    <div>
-                        <a href = {item.url} target="_blank" rel="noopener noreferrer"><h1>{item.title}</h1></a>
-                        <h3>{item.author}</h3>
-                        <p>{item.content}</p>
-                        <p>{item.source.name}</p>
-                    </div>
+                    item.source.name === selectedSource ?
+                    <NewsItem item = {item}/>
                     :
                     null
                 ))
