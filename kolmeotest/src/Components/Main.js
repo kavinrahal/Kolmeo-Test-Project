@@ -4,6 +4,7 @@ import NewsItem from "./NewsItem";
 import "./Styles/Main.css";
 
 export default function Main(){
+
     const [articles, setArticles] = useState([]);
     const [selectedSource, setSelectedSource] = useState("");
     const listOfSources = [...new Set(articles.map(function (item) {
@@ -17,13 +18,18 @@ export default function Main(){
     }, [])
 
     return(
+        
         <div className="newsReader">
-            <select className="filterBox" value = {selectedSource} onChange = {(e) => setSelectedSource(e.target.value)}>
-                <option value="">All Sources</option>
-                {listOfSources.map((item) => (
-                    <option key = {item} value = {item}>{item}</option>
-                ))}
-            </select>
+            <div className="headerWrapper">
+            <h1 className="title">News Reader</h1>
+                <select className="filterBox" value = {selectedSource} onChange = {(e) => setSelectedSource(e.target.value)}>
+                    <option value="">All Sources</option>
+                    {listOfSources.map((item) => (
+                        <option key = {item} value = {item}>{item}</option>
+                    ))}
+                </select>
+            </div>
+            
             {selectedSource === ""?
                 articles.map((item) => 
                 (

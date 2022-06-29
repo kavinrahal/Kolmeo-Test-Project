@@ -1,7 +1,6 @@
 .filterBox {
     border-radius: 5px;
     height: 40px;
-    margin-top: 20px;
     margin-bottom: 20px;
 }
 
@@ -9,8 +8,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #A5DEF1;
-    
+    background: #f7f7f7;
 }
 
 .newsItemWrapper{
@@ -19,5 +17,24 @@
     width: 100%;
     align-items: center;
     justify-content: center;
-    background: #A5DEF1;
+    background: #f7f7f7;
+}
+
+.headerWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    background: #352f43;
+    color: white;
+    border-radius: 0px 0px 40px 40px;
+    overflow: hidden;
+}
+
+.title{
+    font-size: 50px;
 }
