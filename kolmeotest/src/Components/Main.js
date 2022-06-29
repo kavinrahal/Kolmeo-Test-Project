@@ -48,7 +48,7 @@ export default function Main(){
                     :
                     articles.map((item) => 
                     (
-                        // Checks if item to be me mapped has the same source name as the selected source.
+                        // Checks if item to be mapped has the same source name as the selected source.
                         item.source.name === selectedSource ?
                         <div className="newsItemWrapper">
                             <NewsItem item = {item}/>
